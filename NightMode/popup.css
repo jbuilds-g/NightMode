@@ -1,0 +1,167 @@
+body {
+    width: 240px;
+    background-color: #000000;
+    color: #E0E0E0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    padding: 16px;
+    margin: 0;
+    user-select: none;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #222222;
+    padding-bottom: 12px;
+    margin-bottom: 14px;
+}
+
+.header strong {
+    color: #FFFFFF;
+    font-size: 15px;
+    letter-spacing: -0.2px;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+}
+
+.slider-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.slider-row label {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Changed from Blue to Deep Amber */
+.slider-row span {
+    color: #ff7300;
+    font-weight: 600;
+}
+
+select, input[type="time"] {
+    background: #111111;
+    color: #FFFFFF;
+    border: 1px solid #333333;
+    border-radius: 4px;
+    padding: 4px 6px;
+    font-size: 12px;
+    outline: none;
+    color-scheme: dark; /* Forces native time picker to dark mode */
+}
+
+/* Changed from Blue to Deep Amber */
+select:focus, input[type="time"]:focus {
+    border-color: #ff7300;
+}
+
+/* Changed from Blue to Deep Amber */
+input[type="range"] {
+    width: 100%;
+    accent-color: #ff7300;
+    cursor: pointer;
+}
+
+hr {
+    width: 100%;
+    border: none;
+    border-top: 1px solid #222222;
+    margin: 4px 0;
+}
+
+.schedule-header {
+    margin-bottom: 4px;
+}
+
+.schedule-times {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    transition: opacity 0.2s ease;
+}
+
+.schedule-times.disabled {
+    opacity: 0.25;
+    pointer-events: none;
+}
+
+.schedule-times span {
+    font-size: 11px;
+    color: #666666;
+}
+
+/* Custom Switch Logic */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 36px;
+    height: 20px;
+}
+
+.switch.small {
+    width: 28px;
+    height: 16px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #333333;
+    transition: .2s;
+    border-radius: 20px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .2s;
+    border-radius: 50%;
+}
+
+.switch.small .slider:before {
+    height: 10px;
+    width: 10px;
+    left: 3px;
+    bottom: 3px;
+}
+
+/* Changed from Blue to Deep Amber */
+input:checked + .slider {
+    background-color: #ff7300;
+}
+
+input:checked + .slider:before {
+    transform: translateX(16px);
+}
+
+.switch.small input:checked + .slider:before {
+    transform: translateX(12px);
+}

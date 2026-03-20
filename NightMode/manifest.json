@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "NightMode",
+  "version": "1.0.0",
+  "description": "Minimalist screen dimmer and blue light filter with auto-scheduling.",
+  "permissions": [
+    "storage", 
+    "alarms"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Toggle NightMode"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  }
+}

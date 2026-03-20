@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="header">
+        <strong>NightMode</strong>
+        <label class="switch">
+            <input type="checkbox" id="enableToggle">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <div class="controls">
+        <div class="row">
+            <label>Filter Mode</label>
+            <select id="modeSelect">
+                <option value="amber">Amber (Blue Light)</option>
+                <option value="dim">Dim (Darkness)</option>
+                <option value="grayscale">Grayscale (Focus)</option>
+            </select>
+        </div>
+
+        <div class="row slider-row">
+            <label>Intensity: <span id="intVal">30%</span></label>
+            <input type="range" id="intensitySlider" min="0" max="90" value="30">
+        </div>
+
+        <hr>
+
+        <div class="row schedule-header">
+            <label>Auto-Schedule</label>
+            <label class="switch small">
+                <input type="checkbox" id="scheduleToggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+        
+        <div class="schedule-times" id="scheduleInputs">
+            <input type="time" id="startTime" aria-label="Start Time">
+            <span>to</span>
+            <input type="time" id="endTime" aria-label="End Time">
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
